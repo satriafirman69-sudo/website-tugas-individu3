@@ -1,0 +1,488 @@
+
+/* ========================================
+   GENERAL STYLES
+======================================== */
+
+:root {
+    --primary-color: #f4623a;
+    --primary-hover: #cf5331;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --text-color: #6c757d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    margin: 0;
+    font-family: "Merriweather Sans", sans-serif;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+#mainNav {
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+#mainNav .navbar-brand {
+    color: var(--dark-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+#mainNav .navbar-nav .nav-link {
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    transition: color 0.3s ease;
+}
+
+#mainNav .navbar-nav .nav-link:hover,
+#mainNav .navbar-nav .nav-link:focus {
+    color: var(--primary-color);
+}
+
+#mainNav .navbar-toggler {
+    border: 1px solid #ddd;
+    padding: 0.4rem 0.7rem;
+}
+
+#mainNav .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(244, 98, 58, 0.2);
+}
+
+/* ========================================
+   HERO / MASTHEAD
+======================================== */
+
+.masthead {
+    min-height: 100vh;
+    padding: 10rem 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+        linear-gradient(
+            rgba(35, 29, 26, 0.72),
+            rgba(35, 29, 26, 0.72)
+        ),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=85")
+        center center / cover no-repeat;
+}
+
+.masthead h1 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.masthead p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.masthead .divider {
+    margin: 1.5rem auto;
+}
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+hr.divider {
+    width: 3.25rem;
+    height: 0.25rem;
+    margin: 1.5rem auto;
+    background-color: var(--primary-color);
+    border: 0;
+    opacity: 1;
+}
+
+hr.divider-light {
+    background-color: #fff;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.btn {
+    border-radius: 10rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.btn-xl {
+    padding: 1.1rem 2.1rem;
+    font-size: 0.85rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background-color: #fff;
+    border-color: #fff;
+    color: var(--dark-color);
+}
+
+.btn-light:hover {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    color: var(--dark-color);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   PAGE SECTIONS
+======================================== */
+
+.page-section {
+    padding: 7rem 0;
+}
+
+.page-section h2 {
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-primary h2 {
+    color: #fff;
+}
+
+.bg-dark {
+    background-color: var(--dark-color) !important;
+}
+
+/* ========================================
+   ABOUT
+======================================== */
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+#about .btn {
+    margin-top: 0.5rem;
+}
+
+/* ========================================
+   SERVICES
+======================================== */
+
+#services h2 {
+    margin-bottom: 1rem;
+}
+
+#services .mt-5 {
+    padding: 1rem 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+#services .mt-5:hover {
+    transform: translateY(-5px);
+}
+
+#services .bi {
+    font-size: 3rem !important;
+    color: var(--primary-color);
+}
+
+#services h3 {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+#services p {
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   PORTFOLIO
+======================================== */
+
+#portfolio {
+    overflow: hidden;
+}
+
+.portfolio-box {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+.portfolio-box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-box-caption {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(244, 98, 58, 0.9);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.08);
+}
+
+.portfolio-box:hover .portfolio-box-caption {
+    opacity: 1;
+}
+
+.project-category {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+}
+
+.project-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* ========================================
+   CALL TO ACTION
+======================================== */
+
+.bg-dark h2 {
+    color: #fff;
+}
+
+.bg-dark .btn {
+    margin-top: 0.5rem;
+}
+
+/* ========================================
+   CONTACT
+======================================== */
+
+#contact h2 {
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    line-height: 1.9;
+}
+
+#contact .form-control {
+    min-height: 58px;
+    padding: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+#contact textarea.form-control {
+    min-height: 160px;
+    resize: vertical;
+}
+
+#contact .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(244, 98, 58, 0.15);
+}
+
+#contact .form-floating label {
+    padding: 1rem;
+    color: #777;
+}
+
+#contact .form-floating > .form-control:focus ~ label,
+#contact .form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: var(--primary-color);
+}
+
+#contact .invalid-feedback {
+    font-size: 0.85rem;
+}
+
+#contact .btn {
+    min-height: 55px;
+}
+
+#contact .bi-phone {
+    color: var(--primary-color) !important;
+}
+
+#contact .text-center .bi-phone + div {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background-color: var(--light-color);
+    padding: 2rem 0 !important;
+}
+
+footer .small {
+    font-size: 0.85rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (min-width: 992px) {
+    #mainNav {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    #mainNav .navbar-brand {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    #mainNav .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    #mainNav .navbar-brand:hover,
+    #mainNav .navbar-nav .nav-link:hover {
+        color: #fff;
+    }
+}
+
+@media (max-width: 991.98px) {
+    #mainNav {
+        background-color: #fff;
+    }
+
+    #mainNav .navbar-brand {
+        color: var(--dark-color);
+    }
+
+    #mainNav .navbar-nav .nav-link {
+        color: #555;
+        padding: 0.7rem 0;
+    }
+
+    .masthead {
+        min-height: 85vh;
+        padding: 9rem 0 6rem;
+    }
+
+    .masthead h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-section {
+        padding: 5rem 0;
+    }
+
+    .portfolio-box img {
+        height: 260px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .masthead {
+        min-height: 80vh;
+        padding: 8rem 0 5rem;
+    }
+
+    .masthead h1 {
+        font-size: 1.8rem;
+    }
+
+    .masthead p {
+        font-size: 0.9rem;
+    }
+
+    .page-section {
+        padding: 4rem 0;
+    }
+
+    .page-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .btn-xl {
+        padding: 0.95rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .portfolio-box img {
+        height: 230px;
+    }
+
+    #services .mt-5 {
+        margin-top: 1.5rem !important;
+    }
+}
