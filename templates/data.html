@@ -1,0 +1,67 @@
+
+{% extends "base.html" %}
+
+{% block title %}Data Username - Website Satria{% endblock %}
+
+{% block content %}
+
+<section class="page-section">
+    <div class="container px-4 px-lg-5">
+
+        <h2 class="text-center mt-0">
+            Daftar Username Terdaftar
+        </h2>
+
+        <hr class="divider">
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>No</th>
+                        <th>Username</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for user in daftar %}
+
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ user.nama | upper }}</td>
+                        <td>
+                            <span class="badge bg-success">
+                                {{ user.status | title }}
+                            </span>
+                        </td>
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            Belum ada username terdaftar.
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('home') }}"
+               class="btn btn-primary">
+                Kembali ke Beranda
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

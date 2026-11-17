@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+
+{% block title %}Cek Username - Website Satria{% endblock %}
+
+{% block content %}
+
+<section class="page-section">
+    <div class="container px-4 px-lg-5">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+
+                <h2 class="mt-0">Hasil Pengecekan Username</h2>
+                <hr class="divider">
+
+                <p class="text-muted">
+                    Username yang diperiksa:
+                    <strong>{{ username }}</strong>
+                </p>
+
+                {% if not valid %}
+
+                    <div class="alert alert-warning">
+                        Username tidak valid.
+                        Minimal harus terdiri dari 4 karakter.
+                    </div>
+
+                {% elif tersedia %}
+
+                    <div class="alert alert-success">
+                        Selamat! Username
+                        <strong>{{ username }}</strong>
+                        tersedia dan bisa digunakan.
+                    </div>
+
+                {% else %}
+
+                    <div class="alert alert-danger">
+                        Username
+                        <strong>{{ username }}</strong>
+                        sudah dipakai.
+                    </div>
+
+                {% endif %}
+
+                <a href="{{ url_for('home') }}"
+                   class="btn btn-primary mt-3">
+                    Kembali ke Beranda
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
